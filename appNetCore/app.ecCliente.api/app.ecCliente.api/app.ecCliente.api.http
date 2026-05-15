@@ -1,0 +1,6 @@
+@app.ecCliente.api_HostAddress = http://localhost:5180
+
+GET {{app.ecCliente.api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

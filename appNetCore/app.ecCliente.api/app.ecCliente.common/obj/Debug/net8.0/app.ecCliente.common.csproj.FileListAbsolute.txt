@@ -1,0 +1,11 @@
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\bin\Debug\net8.0\app.ecCliente.common.deps.json
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\bin\Debug\net8.0\app.ecCliente.common.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\bin\Debug\net8.0\app.ecCliente.common.pdb
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\app.ecCliente.common.GeneratedMSBuildEditorConfig.editorconfig
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\app.ecCliente.common.AssemblyInfoInputs.cache
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\app.ecCliente.common.AssemblyInfo.cs
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\app.ecCliente.common.csproj.CoreCompileInputs.cache
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\app.ecCliente.common.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\refint\app.ecCliente.common.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\app.ecCliente.common.pdb
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.common\obj\Debug\net8.0\ref\app.ecCliente.common.dll

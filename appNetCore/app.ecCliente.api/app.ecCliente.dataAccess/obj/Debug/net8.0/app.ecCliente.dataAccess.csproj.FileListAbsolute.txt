@@ -1,0 +1,15 @@
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\bin\Debug\net8.0\app.ecCliente.dataAccess.deps.json
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\bin\Debug\net8.0\app.ecCliente.dataAccess.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\bin\Debug\net8.0\app.ecCliente.dataAccess.pdb
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\bin\Debug\net8.0\app.ecCliente.entities.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\bin\Debug\net8.0\app.ecCliente.entities.pdb
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.csproj.AssemblyReference.cache
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.GeneratedMSBuildEditorConfig.editorconfig
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.AssemblyInfoInputs.cache
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.AssemblyInfo.cs
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.csproj.CoreCompileInputs.cache
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCl.DC738FF6.Up2Date
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\refint\app.ecCliente.dataAccess.dll
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\app.ecCliente.dataAccess.pdb
+E:\FILES\JP_DOCS\VS_CODE\appDistri2026\codeSource\appNetCore\app.ecCliente.api\app.ecCliente.dataAccess\obj\Debug\net8.0\ref\app.ecCliente.dataAccess.dll
