@@ -1,0 +1,741 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+		"name": "AppDistri2026 — Microservicios E-Commerce",
+		"description": "Colección completa de endpoints CRUD para los 3 microservicios del ecosistema E-Commerce.\n\n- **EcCliente** (ASP.NET Core - Puerto 5180)\n- **EcPedidos** (FastAPI Python - Puerto 8000)\n- **EcFacturación** (FastAPI Python - Puerto 8001)\n\n**Credenciales JWT:** email: admin@gmail.com / password: admin\n**Secret Key:** my_secrete_key_app_distri (HS256)\n\nEstudiante: Josue Ismael Proaño Arroyo\nAsignatura: Aplicaciones Distribuidas — ISUTJ 2026",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"variable": [
+		{
+			"key": "base_clientes",
+			"value": "http://localhost:5180",
+			"type": "string"
+		},
+		{
+			"key": "base_pedidos",
+			"value": "http://localhost:8000",
+			"type": "string"
+		},
+		{
+			"key": "base_facturas",
+			"value": "http://localhost:8001",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token_pedidos",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token_facturas",
+			"value": "",
+			"type": "string"
+		}
+	],
+	"item": [
+		{
+			"name": "🟦 EcCliente (.NET Core :5180)",
+			"description": "Microservicio de Clientes — ASP.NET Core\nBase de datos: SQL Server (puerto 1434)\nSin autenticación JWT",
+			"item": [
+				{
+					"name": "📁 Cliente",
+					"description": "CRUD completo del módulo Cliente — api/Cliente",
+					"item": [
+						{
+							"name": "GET — Hola Mundo (Test)",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Cliente",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Cliente"]
+								},
+								"description": "Endpoint de prueba que retorna 'Hola Mundo -- ClienteController'"
+							}
+						},
+						{
+							"name": "GET — Obtener Todos los Clientes",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Cliente/obtener-todos",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Cliente", "obtener-todos"]
+								},
+								"description": "Obtiene la lista completa de clientes registrados."
+							}
+						},
+						{
+							"name": "GET — Obtener Cliente por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Cliente/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Cliente", "1"]
+								},
+								"description": "Obtiene un cliente específico por su ID."
+							}
+						},
+						{
+							"name": "POST — Crear Cliente",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"estado\": true,\n  \"nombre\": \"Juan\",\n  \"apellido\": \"Pérez\",\n  \"email\": \"juan@mail.com\",\n  \"cedulaIdentidad\": \"1234567890\",\n  \"fechaNacimiento\": \"1995-03-15T00:00:00\",\n  \"telefono\": \"0991234567\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_clientes}}/api/Cliente",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Cliente"]
+								},
+								"description": "Crea un nuevo cliente. Todos los campos marcados con [Required] son obligatorios."
+							}
+						},
+						{
+							"name": "PUT — Actualizar Cliente",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 1,\n  \"estado\": true,\n  \"nombre\": \"Juan Actualizado\",\n  \"apellido\": \"Pérez López\",\n  \"email\": \"juan.actualizado@mail.com\",\n  \"cedulaIdentidad\": \"1234567890\",\n  \"fechaNacimiento\": \"1995-03-15T00:00:00\",\n  \"telefono\": \"0991234000\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_clientes}}/api/Cliente/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Cliente", "1"]
+								},
+								"description": "Actualiza un cliente existente por su ID."
+							}
+						},
+						{
+							"name": "DELETE — Eliminar Cliente",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Cliente/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Cliente", "1"]
+								},
+								"description": "Elimina un cliente por su ID."
+							}
+						}
+					]
+				},
+				{
+					"name": "📁 DireccionCliente",
+					"description": "CRUD completo del módulo Dirección Cliente — api/DireccionCliente",
+					"item": [
+						{
+							"name": "GET — Obtener Todas las Direcciones",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/DireccionCliente/obtener-todos",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "DireccionCliente", "obtener-todos"]
+								},
+								"description": "Obtiene todas las direcciones de clientes registradas."
+							}
+						},
+						{
+							"name": "GET — Obtener Dirección por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/DireccionCliente/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "DireccionCliente", "1"]
+								},
+								"description": "Obtiene una dirección específica por su ID."
+							}
+						},
+						{
+							"name": "POST — Crear Dirección",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"clienteId\": 1,\n  \"provincia\": \"Tungurahua\",\n  \"ciudad\": \"Ambato\",\n  \"direccion\": \"Av. Principal 123\",\n  \"codigoPostal\": \"180101\",\n  \"estado\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_clientes}}/api/DireccionCliente",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "DireccionCliente"]
+								},
+								"description": "Registra una nueva dirección para un cliente existente."
+							}
+						},
+						{
+							"name": "PUT — Actualizar Dirección",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 1,\n  \"clienteId\": 1,\n  \"provincia\": \"Pichincha\",\n  \"ciudad\": \"Quito\",\n  \"direccion\": \"Av. Amazonas N45-67\",\n  \"codigoPostal\": \"170150\",\n  \"estado\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_clientes}}/api/DireccionCliente/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "DireccionCliente", "1"]
+								},
+								"description": "Actualiza una dirección existente por su ID."
+							}
+						},
+						{
+							"name": "DELETE — Eliminar Dirección",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/DireccionCliente/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "DireccionCliente", "1"]
+								},
+								"description": "Elimina una dirección por su ID."
+							}
+						}
+					]
+				},
+				{
+					"name": "📁 Persona (Ejemplo)",
+					"description": "CRUD del módulo de ejemplo Persona — api/Persona (datos en memoria)",
+					"item": [
+						{
+							"name": "GET — Obtener Todas las Personas",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Persona",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Persona"]
+								},
+								"description": "Obtiene la lista de personas (almacenadas en memoria)."
+							}
+						},
+						{
+							"name": "GET — Obtener Persona por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Persona/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Persona", "1"]
+								},
+								"description": "Obtiene una persona por su ID."
+							}
+						},
+						{
+							"name": "POST — Crear Persona",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 0,\n  \"nombre\": \"Carlos\",\n  \"edad\": 28,\n  \"fecha\": \"2026-05-15T00:00:00\",\n  \"activo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_clientes}}/api/Persona",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Persona"]
+								},
+								"description": "Crea una nueva persona en la lista en memoria."
+							}
+						},
+						{
+							"name": "PUT — Actualizar Persona",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": 1,\n  \"nombre\": \"Juan Modificado\",\n  \"edad\": 31,\n  \"fecha\": \"2026-05-15T00:00:00\",\n  \"activo\": true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_clientes}}/api/Persona/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Persona", "1"]
+								},
+								"description": "Actualiza una persona existente por su ID."
+							}
+						},
+						{
+							"name": "DELETE — Eliminar Persona",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_clientes}}/api/Persona/1",
+									"host": ["{{base_clientes}}"],
+									"path": ["api", "Persona", "1"]
+								},
+								"description": "Elimina una persona por su ID."
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "🟩 EcPedidos (FastAPI :8000)",
+			"description": "Microservicio de Pedidos — FastAPI Python\nBase de datos: MySQL (puerto 3307)\nJWT: HS256 / Secret: my_secrete_key_app_distri\nCredenciales: admin@gmail.com / admin",
+			"item": [
+				{
+					"name": "🔐 Seguridad",
+					"description": "Autenticación JWT para el microservicio EcPedidos",
+					"item": [
+						{
+							"name": "POST — Login (Obtener Token JWT)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 200) {",
+											"    var token = pm.response.json();",
+											"    pm.collectionVariables.set('jwt_token_pedidos', token);",
+											"    console.log('✅ Token EcPedidos guardado automáticamente');",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_pedidos}}/login",
+									"host": ["{{base_pedidos}}"],
+									"path": ["login"]
+								},
+								"description": "Obtiene un token JWT para acceder a los endpoints protegidos.\n\nCredenciales de prueba:\n- email: admin@gmail.com\n- password: admin\n\nEl token se guarda automáticamente en la variable `jwt_token_pedidos`."
+							}
+						}
+					]
+				},
+				{
+					"name": "📁 Pedidos",
+					"description": "CRUD completo del módulo Pedidos — /pedidos",
+					"item": [
+						{
+							"name": "GET — Obtener Todos los Pedidos 🔒",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt_token_pedidos}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_pedidos}}/pedidos",
+									"host": ["{{base_pedidos}}"],
+									"path": ["pedidos"]
+								},
+								"description": "Obtiene todos los pedidos registrados.\n🔒 Requiere autenticación JWT (Bearer Token)."
+							}
+						},
+						{
+							"name": "GET — Obtener Pedido por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_pedidos}}/pedidos/1",
+									"host": ["{{base_pedidos}}"],
+									"path": ["pedidos", "1"]
+								},
+								"description": "Obtiene un pedido específico por su ID.\n🔓 No requiere autenticación."
+							}
+						},
+						{
+							"name": "POST — Crear Pedido 🔒",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt_token_pedidos}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"direccion_cliente_id\": 1,\n  \"fecha_pedido\": \"2026-05-15T00:00:00\",\n  \"total\": 150.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_pedidos}}/pedidos",
+									"host": ["{{base_pedidos}}"],
+									"path": ["pedidos"]
+								},
+								"description": "Registra un nuevo pedido. Publica evento a RabbitMQ (pedidoRegistradoEvent).\n🔒 Requiere autenticación JWT (Bearer Token)."
+							}
+						},
+						{
+							"name": "PUT — Actualizar Pedido",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"direccion_cliente_id\": 1,\n  \"fecha_pedido\": \"2026-05-15T10:00:00\",\n  \"total\": 200.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_pedidos}}/pedidos/1",
+									"host": ["{{base_pedidos}}"],
+									"path": ["pedidos", "1"]
+								},
+								"description": "Actualiza un pedido existente por su ID.\n🔓 No requiere autenticación."
+							}
+						},
+						{
+							"name": "DELETE — Eliminar Pedido",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_pedidos}}/pedidos/1",
+									"host": ["{{base_pedidos}}"],
+									"path": ["pedidos", "1"]
+								},
+								"description": "Elimina un pedido por su ID.\n🔓 No requiere autenticación."
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "🟧 EcFacturación (FastAPI :8001)",
+			"description": "Microservicio de Facturación — FastAPI Python\nBase de datos: PostgreSQL (puerto 5434)\nJWT: HS256 / Secret: my_secrete_key_app_distri\nCredenciales: admin@gmail.com / admin",
+			"item": [
+				{
+					"name": "🔐 Seguridad",
+					"description": "Autenticación JWT para el microservicio EcFacturación",
+					"item": [
+						{
+							"name": "POST — Login (Obtener Token JWT)",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"if (pm.response.code === 200) {",
+											"    var token = pm.response.json();",
+											"    pm.collectionVariables.set('jwt_token_facturas', token);",
+											"    console.log('✅ Token EcFacturas guardado automáticamente');",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"admin@gmail.com\",\n  \"password\": \"admin\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_facturas}}/login",
+									"host": ["{{base_facturas}}"],
+									"path": ["login"]
+								},
+								"description": "Obtiene un token JWT para acceder a los endpoints protegidos de EcFacturación.\n\nCredenciales de prueba:\n- email: admin@gmail.com\n- password: admin\n\nEl token se guarda automáticamente en la variable `jwt_token_facturas`."
+							}
+						}
+					]
+				},
+				{
+					"name": "📁 Facturas",
+					"description": "CRUD completo del módulo Facturas — /facturas",
+					"item": [
+						{
+							"name": "GET — Obtener Todas las Facturas 🔒",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt_token_facturas}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_facturas}}/facturas",
+									"host": ["{{base_facturas}}"],
+									"path": ["facturas"]
+								},
+								"description": "Obtiene todas las facturas registradas.\n🔒 Requiere autenticación JWT (Bearer Token)."
+							}
+						},
+						{
+							"name": "GET — Obtener Factura por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_facturas}}/facturas/1",
+									"host": ["{{base_facturas}}"],
+									"path": ["facturas", "1"]
+								},
+								"description": "Obtiene una factura específica por su ID.\n🔓 No requiere autenticación."
+							}
+						},
+						{
+							"name": "POST — Crear Factura 🔒",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt_token_facturas}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"pedido_id\": 1,\n  \"numero_factura\": \"FAC-001\",\n  \"fecha_factura\": \"2026-05-15T00:00:00\",\n  \"total_factura\": 150.50\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_facturas}}/facturas",
+									"host": ["{{base_facturas}}"],
+									"path": ["facturas"]
+								},
+								"description": "Registra una nueva factura asociada a un pedido.\n🔒 Requiere autenticación JWT (Bearer Token)."
+							}
+						},
+						{
+							"name": "PUT — Actualizar Factura",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"pedido_id\": 1,\n  \"numero_factura\": \"FAC-001-UPD\",\n  \"fecha_factura\": \"2026-05-15T12:00:00\",\n  \"total_factura\": 175.00\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_facturas}}/facturas/1",
+									"host": ["{{base_facturas}}"],
+									"path": ["facturas", "1"]
+								},
+								"description": "Actualiza una factura existente por su ID.\n🔓 No requiere autenticación."
+							}
+						},
+						{
+							"name": "DELETE — Eliminar Factura",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{base_facturas}}/facturas/1",
+									"host": ["{{base_facturas}}"],
+									"path": ["facturas", "1"]
+								},
+								"description": "Elimina una factura por su ID.\n🔓 No requiere autenticación."
+							}
+						}
+					]
+				},
+				{
+					"name": "📁 Pedidos (Consulta Réplica)",
+					"description": "Endpoints de consulta de pedidos replicados vía RabbitMQ — /pedidos (en servicio EcFacturación)",
+					"item": [
+						{
+							"name": "GET — Obtener Pedidos Replicados 🔒",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{jwt_token_facturas}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_facturas}}/pedidos",
+									"host": ["{{base_facturas}}"],
+									"path": ["pedidos"]
+								},
+								"description": "Consulta los pedidos replicados desde EcPedidos vía RabbitMQ.\n🔒 Requiere autenticación JWT (Bearer Token)."
+							}
+						},
+						{
+							"name": "GET — Obtener Pedido Replicado por ID",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_facturas}}/pedidos/1",
+									"host": ["{{base_facturas}}"],
+									"path": ["pedidos", "1"]
+								},
+								"description": "Consulta un pedido replicado específico por su ID.\n🔓 No requiere autenticación."
+							}
+						}
+					]
+				}
+			]
+		}
+	]
+}
