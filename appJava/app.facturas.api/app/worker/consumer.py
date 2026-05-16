@@ -53,7 +53,7 @@ def start():
     )
 
     channel = connection.channel()
-    channel.queue_declare(queue=RABBITMQ["queue"], durable=True)
+    channel.queue_declare(queue=RABBITMQ["queue"], durable=False)
 
     channel.basic_consume(
         queue=RABBITMQ["queue"],
