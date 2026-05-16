@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\build\app.ecCliente.api.props" />
-</Project>
